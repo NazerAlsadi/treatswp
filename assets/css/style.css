@@ -1,0 +1,478 @@
+/*
+Theme Name: Treats
+Theme URI: http://shtheme.com/demosd/treats
+Author: Shtheme
+Author URI: https://themeforest.net/user/shtheme
+Description: In 2023, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with WordPress has never been easier.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: treats
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* ========TABLE OF CONTENTS==========
+00. Body, links, hgroup, paragraphs, general styles
+01. Fixed header & Navigation
+02. Section Intro (Home)
+03. Section About
+04. Section Resume
+05. Section Portfolio
+06. Section Blog
+07. Section Contact
+08. Footer
+09. Loader
+10. Responsive design
+
+/*--------------------------------------------------
+    00. Body, links, hgroup, paragraphs, general styles
+---------------------------------------------------*/
+
+.comment-content h6.name {
+	text-transform: capitalize;
+}
+
+.comment-respond h3.comment-reply-title {
+	text-transform: capitalize;
+}
+
+.comment-form-cookies-consent {
+    display: none;
+}
+
+p.logged-in-as {
+	margin-bottom: 20px!important;
+	margin-top: 15px!important;
+}
+
+p.logged-in-as a {
+	color: var(--text-medium);
+}
+
+.icon-start a[rel="author"] {
+	text-transform: capitalize;
+}
+
+div#subscriptionForm input[type="submit"] {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    border-color: transparent;
+    display: inline-block;
+    flex: 0 0 auto;
+    background-color: var(--color-primary);
+    color: var(--btn-color);
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+}
+
+div#subscriptionForm span.your-email {
+	display: inline-block;
+	width: 85%;
+}
+
+div#subscriptionForm span.ajax-loader {
+	display: none;
+}
+
+div#subscriptionForm div.rounded-pill {
+	padding: 5px;
+}
+
+div#subscriptionForm span.your-email input[name="your-email"] {
+	width: 100%;
+}
+
+.widget-area .widget_search .btn-icon {
+	flex: 0 0 auto;
+    background-color: var(--color-primary);
+    color: var(--btn-color);
+    width: 50px;
+    height: 50px;
+}
+
+.widget-area .widget_search .input-inline {
+    align-items: center;
+    padding: 5px;
+}
+
+.widget_categories ul li {
+	list-style: none;
+	border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
+    color: #333;
+}
+
+.widget_categories ul li:hover {
+	border: var(--bs-border-width) var(--bs-border-style) var(--color-primary)!important;
+}
+
+.widget_categories ul li:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.widget_categories ul li a {
+	padding: 20px !important;
+	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: var(--radius-sm) !important;
+    border-color: var(--border-color) !important;
+    display: inline-block;
+    width: 86%;
+}
+
+ul.wp-tag-cloud {
+	list-style: none;
+}
+
+ul.wp-tag-cloud li a {
+	color: var(--text-dark);
+    text-decoration: none;
+    outline: 0 !important;
+    transition: all 0.3s ease-out;
+    font-size: var(--font-sm)!important;
+    border-color: var(--border-color)!important;
+    border-radius: var(--radius-sm)!important;
+}
+
+ul.wp-tag-cloud li {
+	display: inline-block;
+	border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
+	padding-right: 1rem!important;
+    padding-left: 1rem!important;
+    padding-top: 0.5rem!important;
+    padding-bottom: 0.5rem!important;
+    margin: 5px;
+    margin-right: 0px;
+    border-radius: 5px;
+}
+
+ul.wp-tag-cloud li:hover {
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+ul.wp-tag-cloud li:hover a {
+    color: var(--text-white);
+}
+
+article.blog .blog-list .icon-start {
+	color: var(--text-dark);
+	margin-bottom: 5px;
+}
+
+.blog-area.blog-sidebar .card-content {
+    margin-top: 0px;
+    margin-inline: inherit;
+    width: 100%;
+    border-top-right-radius: 0px!important;
+    border-top-left-radius: 0px!important;
+    border-top: none!important;
+}
+
+.blog-area.blog-sidebar .card-img {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.blog-area.blog-sidebar button.btn.btn-primary {
+    padding: 12px 32px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.blog-area.blog-sidebar button.btn.btn-primary:hover a {
+    color: #fff!important;
+}
+
+.blog-area.blog-sidebar ul.card-list li, .blog-area.blog-sidebar ul.card-list li a {
+    color: var(--text-dark);
+}
+
+.blog-area.blog-sidebar .card p.the-content {
+    color: #333;
+}
+
+.pagination-nav ul.pagination span.current {
+        text-align: center;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+    padding: 0;
+    font-size: var(--font-base);
+    border: none;
+    background-color: transparent;
+    color: var(--btn-color);
+    background-color: var(--color-primary);
+    border-color: var(--border-color);
+}
+
+.pagination-nav ul.pagination li a {
+    color: var(--text-dark);
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+    padding: 0;
+    font-size: var(--font-base);
+    border: none;
+    background-color: transparent;
+}
+
+.pagination-nav ul.pagination li a:hover {
+    color: var(--btn-color);
+    background-color: var(--color-primary);
+    border-color: var(--border-color);
+}
+
+.search-custom form {
+    max-width: 70%;
+    margin-top: 20px;
+}
+
+.search-custom form button {
+    flex: 0 0 auto;
+    background-color: var(--color-primary);
+    color: var(--btn-color);
+    width: 50px;
+    height: 50px;
+}
+
+.search-custom form .input-inline {
+    align-items: center;
+    padding: 5px;
+}
+
+.search-custom h4 {
+    font-size: 26px;
+}
+
+.comments h3, .comment-reply h3.comment-reply-title {
+    font-size: 28px;
+}
+
+.comment-content p {
+    margin-top: 15px;
+}
+
+.comment-content a.comment-reply-link {
+    font-size: var(--font-sm) !important;
+    color: var(--color-primary) !important;
+}
+
+.footer-area .newsletter-form #newsletterForm br, 
+.footer-area .newsletter-form #newsletterForm span.ajax-loader {
+    display: none;
+}
+
+.footer-area .newsletter-form #newsletterForm input.btn-primary {
+    height: calc(100% - 10px);
+    color: var(--btn-color);
+    background-color: var(--color-primary);
+    transition: all 0.3s ease-out;
+    box-shadow: 0 10px 30px -7px rgba(var(--color-primary-rgb), 0.5);
+    border: 1px solid var(--color-primary);
+}
+
+.footer-home-3 div#newsletterForm input[type="email"],
+.footer-home-3 div#newsletterForm input[type="submit"],
+.footer-home-4 div#newsletterForm input[type="email"],
+.footer-home-4 div#newsletterForm input[type="submit"] {
+    border-radius: var(--radius-sm) !important;
+}
+
+@media(max-width: 1400px) {
+    div#subscriptionForm span.your-email {
+        width: 82%;
+    }
+}
+
+.theme-color-2 ul.navbar-nav > li.nav-item > a.nav-link:hover {
+    color: #fff;
+}
+
+.btn-3 a {
+    color: #fff;
+}
+
+.btn-4 a {
+    color: #85c33c;
+}
+
+.btn-4:hover a {
+    color: #fff;
+}
+
+.btn-5 a {
+    color: #fff;
+}
+
+.custom-checkbox .wpcf7-list-item {
+    margin-left: 0px;
+    color: var(--text-dark);
+}
+
+.custom-checkbox .wpcf7-list-item input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+form.comment-form .col-sm-6 {
+    width: 49%;
+    display: inline-block;
+}
+
+form.comment-form > .col-sm-6:nth-child(2) {
+    float: right;
+}
+
+h3.comment-reply-title {
+    margin-bottom: 15px;
+}
+
+.footer-area div#newsletterForm span.your-email span.wpcf7-not-valid-tip {
+	display: none;
+}
+
+.footer-area .newsletter-form .wpcf7-response-output {
+	color: #fff;
+}
+
+.hero-banner-2 .bg-shape img.lazyloaded {
+	 width: 100%;
+}
+
+.bg-shape img {
+	width: 100%;
+}
+
+.product-lg-2 div.bg-img {
+	background-repeat: repeat;
+}
+
+.testimonial-area.testimonial-1 {
+	background-size: cover;
+}
+
+.testimonial-blog-area.bg-img {
+	background-size: contain;
+}
+
+.coming-soon-area .main-form div#newsletterForm .ajax-loader,
+.coming-soon-area .main-form div#newsletterForm br {
+	display: none;
+}
+
+.coming-soon-area .newsletter-form .btn {
+	background-color: var(--color-primary);
+    transition: all 0.3s ease-out;
+    box-shadow: 0 10px 30px -7px rgba(var(--color-primary-rgb), 0.5);
+    border: 1px solid var(--color-primary);
+}
+
+.newsletter-form form span.wpcf7-spinner {
+	display: none;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	margin-left: 0px;
+}
+
+.comment-content a.comment-reply-link {
+	  top: -5px;
+		right: -10px;
+		position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    text-transform: capitalize;
+    border-radius: 0;
+    letter-spacing: 0.05em;
+    font-weight: var(--font-medium);
+    z-index: 1;
+    transition: all 0.3s ease-out;
+	float: right;
+	    padding: 10px 24px;
+    font-size: var(--font-sm);
+	color: #121212!important;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease-out;
+    box-shadow: 0 10px 30px -7px rgba(var(--color-primary-rgb), 0.5);
+    border: 1px solid var(--color-primary);
+	    border-radius: var(--bs-border-radius-pill)!important;
+}
+
+.comment-content a.comment-reply-link:hover {
+	  color: #fff!important;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.comment-content a.comment-reply-link::before, a#cancel-comment-reply-link::before {
+	  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    content: "";
+    background: var(--bg-dark);
+    border-radius: 50%;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    z-index: -1;
+}
+
+.comment-content a.comment-reply-link:hover::before, 
+a#cancel-comment-reply-link:hover::before {
+    transform: translateY(0) scale(2);
+}
+
+form.comment-form input[type="submit"]:hover,
+a#cancel-comment-reply-link:hover {
+	background: #121212;
+	color: #fff;
+}
+
+a#cancel-comment-reply-link {
+	float: right;
+	position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    text-transform: capitalize;
+    border-radius: 0;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    z-index: 1;
+	padding: 10px 24px;
+	    color: var(--btn-color);
+    background-color: var(--color-primary);
+    transition: all 0.3s ease-out;
+    box-shadow: 0 10px 30px -7px rgba(var(--color-primary-rgb), 0.5);
+    border: 1px solid var(--color-primary);
+	border-radius: var(--bs-border-radius-pill)!important;
+}
+
+.theme-color-3 .header-top-items span.color-primary {
+	color: #fff!important;
+}
+
+
+.blog-area.blog-sidebar .card-content {
+	    border-top-right-radius: var(--radius-md) !important;
+	border-top-left-radius: var(--radius-md) !important;
+	border-top: 1px solid #dee2e6!important;
+}
+
+.blog-area.blog-sidebar .card-img + .card-content {
+	    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-top: none !important;
+}
